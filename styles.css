@@ -1,0 +1,227 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(rgba(135, 206, 235, 0.7), rgba(135, 206, 235, 0.7));
+    font-family: Arial, sans-serif;
+}
+
+.game-container {
+    position: relative;
+    background: rgba(135, 206, 235, 0.3);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    margin: 80px 0;  /* Espacio para scoreboard y controls */
+}
+
+canvas {
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    background: rgba(135, 206, 235, 0.2);
+}
+
+.controls {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    gap: 30px;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.controls p {
+    margin: 0;
+    padding: 5px 10px;
+}
+
+@media (max-width: 768px) {
+    .game-container {
+        width: 100vw;
+        height: 100vh;
+        padding: 0;
+    }
+    
+    canvas {
+        width: 100%;
+        height: 100%;
+    }
+
+    .controls {
+        font-size: 14px;
+    }
+}
+
+#loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 24px;
+    z-index: 100;
+}
+
+.scoreboard {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 10px;
+    display: flex;
+    gap: 30px;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: bold;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    /* Asegurar que el tablero no se mueva */
+    transition: none;
+    animation: none;
+}
+
+/* Eliminar estilos que ya no se necesitan */
+.title-container, .game-logo {
+    display: none;
+}
+
+.game-messages {
+    position: fixed;
+    top: 100px; /* Mensajes más arriba */
+    left: 0;
+    right: 0;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+/* Añadir estilos para el mensaje de vidas extra */
+.bonus-lives {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(45deg, #ff4081, #f50057);
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    font-size: 24px;
+    animation: bonusLives 2s forwards;
+    z-index: 1000;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+}
+
+@keyframes bonusLives {
+    0% { transform: translate(-50%, -50%) scale(0); }
+    50% { transform: translate(-50%, -50%) scale(1.2); }
+    100% { transform: translate(-50%, -50%) scale(1); }
+}
+
+.game-over {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    display: none;
+}
+
+.game-over button {
+    margin: 10px;
+    padding: 15px 30px;
+    font-size: 18px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.retry-btn {
+    background: #4CAF50;
+    color: white;
+}
+
+.exit-btn {
+    background: #f44336;
+    color: white;
+}
+
+.modal-confirm {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.95);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    z-index: 1000;
+    display: none;
+    color: white;
+    min-width: 300px;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.2);
+}
+
+.modal-confirm h3 {
+    color: #ff6b6b;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.love-button {
+    background: #ff4081;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.love-button:hover {
+    background: #f50057;
+    transform: scale(1.05);
+}
+
+.download-section {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.download-section p {
+    color: #ff6b6b;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.download-btn {
+    background: linear-gradient(45deg, #ff4081, #f50057);
+    box-shadow: 0 4px 15px rgba(255, 64, 129, 0.3);
+}
+
+.download-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(255, 64, 129, 0.5);
+}

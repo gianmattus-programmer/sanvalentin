@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Juego de Corazones">
+    <meta name="keywords" content="juego, corazones, amor, memoria">
+    <meta name="author" content="GiancarlosChavez">
+    <meta name="copyright" content="GiancarlosChavezSanValentin">
+    <title>Juego de Corazones</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <div id="loading">Cargando imágenes...</div>
+        <div class="scoreboard" id="scoreboard">
+            <div>NIVEL: <span id="level">1</span>/14</div>
+            <div>PUNTOS: <span id="score">0</span></div>
+            <div id="hearts"></div>
+        </div>
+        <canvas id="gameCanvas"></canvas>
+        <div class="game-over" id="gameOver">
+            <h2>¡JUEGO TERMINADO! 💝</h2>
+            <p>NIVEL DE AMOR ALCANZADO: <span id="finalLevel"></span></p>
+            <p>PUNTOS DE AMOR: <span id="finalScore"></span> 💕</p>
+            <p class="love-message">¡Cada punto representa un momento especial contigo!</p>
+            <button class="retry-btn" id="retryButton">VOLVER A INTENTAR</button>
+            <button class="exit-btn" id="exitButton">SALIR</button>
+        </div>
+        <div class="controls">
+            <p>PC: ← → PARA MOVER</p>
+            <p>MÓVIL: DESLIZAR PARA MOVER</p>
+        </div>
+        
+        <!-- Agregar el modal de confirmación -->
+        <div class="modal-confirm" id="exitConfirm">
+            <h3>¿ESTÁS SEGURA? 😢</h3>
+            <p>TENGO MÁS AMOR PARA DARTE ❤️</p>
+            <button class="love-button" id="stayButton">SEGUIR JUGANDO 💝</button>
+            <button class="love-button" id="confirmExit">SALIR 💔</button>
+            <div class="download-section">
+                <p>ANTES DE IRTE...</p>
+                <button class="love-button download-btn" id="downloadLetter">
+                    ÉSTO ES PARA TI 💌
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
