@@ -1,6 +1,6 @@
 # 💘 Juego de San Valentín
 
-Un juego especial creado con amor para el día de San Valentín 2024.
+Un juego especial creado con amor para el día de San Valentín 2025.
 
 ## 🎮 Características
 
