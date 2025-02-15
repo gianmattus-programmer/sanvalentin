@@ -58,6 +58,6 @@ Un juego especial creado con amor para el día de San Valentín 2025.
 
 ## 📝 Nota
 
-Este juego fue creado especialmente para demostrar amor en el día de San Valentín. Cada detalle, desde los corazones hasta los mensajes, fue pensado con cariño.
+Este juego fue creado especialmente para demostrar amor en el día de San Valentín. Cada detalle, desde los corazones hasta los mensajes, fue pensado con cariño para YadiraBS.
 
 ¡Feliz día de San Valentín! 💘
